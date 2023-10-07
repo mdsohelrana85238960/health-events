@@ -7,6 +7,8 @@ import About from "../page/about";
 import Contact from "../page/Contact";
 import Login from "../page/Login";
 import Register from "../page/Register";
+import EventCard from "../EventCard/EventCard";
+import EventDetails from "../EventCard/EventDetails";
 
 
 
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         loader: () => fetch('/events.json')
+      },
+      {
+        path:'/event/:id',
+        element:<EventDetails></EventDetails>
       },
       {
         path:'/about',

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const EventCard = ({event}) => {
     const {name,id,img, price,description } = event;
@@ -10,7 +11,7 @@ const EventCard = ({event}) => {
     <p  className="text-xl pb-1"> Price: {price}$ </p>
 
     <div className="card-actions ">
-      <button className="btn btn-primary">Show Details</button>
+      <Link to= {`/event/${id}`} > <button className="btn btn-primary">Show Details</button> </Link>
     </div>
   </div>
 </div>

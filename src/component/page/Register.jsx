@@ -1,11 +1,26 @@
+
 import { Link } from "react-router-dom";
 
 
+
 const Register = () => {
+  
+
+  const handleRegister = (e) =>{
+    e.preventDefault()
+    const name = e.target.name.value
+    const email = e.target.email.value
+    const password = e.target.password.value
+    console.log(name,email,password);
+
+
+
+   
+  }
     return (
        
         <div className="card flex-shrink-0 w-full mx-auto max-w-md shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -41,3 +56,10 @@ const Register = () => {
 
 
 export default Register;
+
+
+
+
+
+
+

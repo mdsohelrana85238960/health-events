@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Footer from "../Navbar/Footer";
 import Banner from "./Banner";
 import EventCard from "../EventCard/EventCard";
+import EventDetails from "../EventCard/EventDetails";
+
 
 
 
@@ -21,9 +23,15 @@ Interactive and immersive experiences for all!</p>
 
 <div className="   mt-20 grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
-        events.map(event => <EventCard key={event.id} event={event} ></EventCard>)
+        events.map(event => <EventCard key={event.id} event={event} ></EventCard> )
     }
 </div>
+
+{/* <div className="   mt-20 grid gap-16 grid-cols-1 ">
+    {
+        events.map(event => <EventDetails key={event.id} event={event} ></EventDetails> )
+    }
+</div> */}
 
 <div className="text-center text-white py-32 my-10 bg-blue-950">
     <h2 className="text-4xl font-medium">
