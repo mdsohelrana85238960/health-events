@@ -1,11 +1,52 @@
-import { Link } from "react-router-dom";
+
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import swal from "sweetalert";
+import {FaEye, FaEyeSlash} from 'react-icons/fa'
+
 
 const Login = () => {
+  const [ showPassword, setShowPassword] = useState(false)
+  const {singIn} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate()
+  
+  const handleLogin = e => {
+    e.preventDefault()
+    // const form = new FormData(e.currentTarget);
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password);
+
+   
+    // if (email !== "your_desired_password") {
+    //   swal("Incorrect email and password ", "Please enter the correct email", "error");
+    //   return;
+    // }
+   
+    // const email =form.get('email')
+    // const password =form.get('password')
+   singIn(email,password)
+    .then(result =>{
+        console.log(result.user);
+        navigate(location.state ? location.state : '/')
+        swal("Good job!", "Login Successfully!", "success");
+    })
+    .catch(error =>{
+        console.error(error);
+    })
+}
+
+
+
+  
   
     return (
        
       <div className="card flex-shrink-0 w-full mx-auto max-w-md shadow-2xl bg-base-100">
-        <form  className="card-body">
+        <form onSubmit={handleLogin}  className="card-body">
         
           <div className="form-control">
             <label className="label">
@@ -18,7 +59,12 @@ const Login = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input type="password" placeholder="Password" name="password" className="input input-bordered" required />
+            <input type= {showPassword ? "text":"password"}placeholder="Password" name="password" className="input input-bordered" required />
+          <span className="relative bottom-8 left-[350px]" onClick={()=> setShowPassword(!showPassword)}>
+            {
+              showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+            }
+          </span>
             <label className="label">
               <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
             </label>

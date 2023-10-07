@@ -7,8 +7,9 @@ import About from "../page/about";
 import Contact from "../page/Contact";
 import Login from "../page/Login";
 import Register from "../page/Register";
-import EventCard from "../EventCard/EventCard";
+
 import EventDetails from "../EventCard/EventDetails";
+import PrivateRouter from "./PrivateRouter";
 
 
 
@@ -24,15 +25,16 @@ const router = createBrowserRouter([
       },
       {
         path:'/event/:id',
-        element:<EventDetails></EventDetails>
+        element: <PrivateRouter> <EventDetails></EventDetails> </PrivateRouter>,
+        loader: () => fetch('/events.json')
       },
       {
         path:'/about',
-        element:<About></About>
+        element: <PrivateRouter><About></About></PrivateRouter>
       },
       {
         path:'/contact',
-        element:<Contact></Contact>
+        element: <PrivateRouter><Contact></Contact></PrivateRouter>
       },
       {
         path:'/login',

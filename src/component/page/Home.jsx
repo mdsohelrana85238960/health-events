@@ -2,13 +2,15 @@ import { useLoaderData } from "react-router-dom";
 import Footer from "../Navbar/Footer";
 import Banner from "./Banner";
 import EventCard from "../EventCard/EventCard";
-import EventDetails from "../EventCard/EventDetails";
+
+
 
 
 
 
 const Home = () => {
     const events = useLoaderData();
+    console.log( events);
     return (
         <div>
             <Banner></Banner>
@@ -20,18 +22,24 @@ Let our certified instructors help your team achieve balance <br />
 
 Interactive and immersive experiences for all!</p>
            </div>
+           <h2 className="text-center font-bold underline mt-20 text-3xl">Health Eevents</h2>
 
 <div className="   mt-20 grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
-        events.map(event => <EventCard key={event.id} event={event} ></EventCard> )
+       events && events.map(event => <EventCard key={event.id} event={event} ></EventCard> )
+
     }
 </div>
 
-{/* <div className="   mt-20 grid gap-16 grid-cols-1 ">
+{/* <div>
     {
-        events.map(event => <EventDetails key={event.id} event={event} ></EventDetails> )
+      events && events.map(oneEvent => <EventDetails key={oneEvent.id} oneEvent={oneEvent} ></EventDetails> )
     }
 </div> */}
+
+
+   
+
 
 <div className="text-center text-white py-32 my-10 bg-blue-950">
     <h2 className="text-4xl font-medium">
