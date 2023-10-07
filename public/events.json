@@ -1,0 +1,50 @@
+[
+    {
+      "id":1,
+      "name": "YOGA",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/6a7e37be-078f-4e81-928c-264fb396ad1f/Yoga+image+2.png?format=2500w",
+      "price": 19.99,
+      "description": "Stretch, relax, ground yourself."
+    },
+    {
+        "id":2,
+      "name": "MEDITATION",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/1663870928276-IAOS4TXYHNGGOQHQSBNF/unsplash-image--5nwt_aN2E0.jpg?format=2500w",
+      "price": 49.99,
+      "description": "Learn techniques to promote mental heath."
+    },
+    {
+        "id":3,
+      
+      "name": "SOUND BATH",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/1663871287109-MDDP7GN20H8L7B85Y1JL/unsplash-image-VsI_74zRzAo.jpg?format=2500w",
+      "price": 9.99,
+      "description": "Create balance, restore harmony, calm mind."
+    },
+    {
+        "id":4,
+      
+      "name": "90’S STRETCH CLASS",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/1663872025039-6CFWID1776BDL5SXG2MP/unsplash-image-kd44ojVhYc8.jpg?format=2500w",
+      "price": 29.99,
+      "description": "Move & groove to your favorite hits."
+    },
+    {
+        "id":5,
+      
+      "name": "FINANCIAL HEALTH",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/1663871772904-16DBEOUMY89N0BTCPTPG/unsplash-image-SoT4-mZhyhE.jpg?format=2500w",
+      "price": 14.99,
+      "description": "Our finances tie into our wellness."
+    },
+    {
+        "id":6,
+      
+      "name": "FUN FITNESS",
+      "img": "https://images.squarespace-cdn.com/content/v1/5e9f075c097b7d5688f6cb57/1664901762143-0R7ZX621V3ZZMBHETE6J/unsplash-image-Nqeyae9jOd4.jpg?format=2500w",
+      "price": 59.99,
+      "description": "Bollywood Dance, Body Sculpt, Barre, & more!."
+    }
+    
+  ]
+  
