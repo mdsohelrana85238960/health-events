@@ -10,6 +10,7 @@ import Register from "../page/Register";
 
 import EventDetails from "../EventCard/EventDetails";
 import PrivateRouter from "./PrivateRouter";
+import Error from "../page/error";
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children:[
       {
         path:'/',

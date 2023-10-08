@@ -4,9 +4,26 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import swal from "sweetalert";
 import {FaEye, FaEyeSlash} from 'react-icons/fa'
+import {FcGoogle} from 'react-icons/fc'
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../firebase/FireBase";
 
 
 const Login = () => {
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSingIn = () =>{
+    signInWithPopup(auth,provider)
+    .then(result =>{
+      console.log(result.user);
+      swal("Good job!", "Login Successfully! With Google ", "success");
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  }
+
   const [ showPassword, setShowPassword] = useState(false)
   const {singIn} = useContext(AuthContext);
   const location = useLocation();
@@ -74,6 +91,8 @@ const Login = () => {
           </div>
         </form>
         <p className="text-center pb-4" >Do not have an account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p> 
+
+        <button onClick={handleGoogleSingIn} className="flex py-4 justify-center items-center"> <FcGoogle className="text-4xl "></FcGoogle> </button>
       </div>
    
  
