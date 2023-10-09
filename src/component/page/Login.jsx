@@ -77,7 +77,7 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input type= {showPassword ? "text":"password"}placeholder="Password" name="password" className="input input-bordered" required />
-          <span className="relative bottom-8 left-[350px]" onClick={()=> setShowPassword(!showPassword)}>
+          <span className="relative bottom-8 left-[340px]" onClick={()=> setShowPassword(!showPassword)}>
             {
               showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
             }

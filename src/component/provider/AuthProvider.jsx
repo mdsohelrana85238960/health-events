@@ -1,5 +1,5 @@
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,  } from "firebase/auth";
 import app from '../firebase/FireBase'
 import { createContext, useEffect, useState } from "react";
 
@@ -46,6 +46,8 @@ const AuthProviders = ( {children} ) => {
     }
 
  
+
+   
 
 
 

@@ -3,6 +3,8 @@ import { AuthContext } from "../provider/AuthProvider";
 import {FaEye, FaEyeSlash} from 'react-icons/fa'
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import { updateProfile } from "firebase/auth";
+
 
 
 
@@ -38,13 +40,23 @@ const Register = () => {
        createUser(email,password)
         .then(result =>{
             console.log(result.user);
-            swal("Good job! User Created", "Login Successfully!", "success");
-
+            updateProfile(result.user,{
+             displayName: name ,
+             photoURL: photo,
+            })
         })
+
+        .then(() => {
+          swal("Good job! User Created", "Login Successfully!", "success");
+        })
+      
+
         .catch(error =>{
             console.error(error);
             swal("error", "Check Your input", "error");
         })
+
+       
     }
     return (
         <div>
@@ -78,7 +90,7 @@ const Register = () => {
             <span className="label-text">Password</span>
           </label>
           <input type= {showPassword ? "text":"password"}placeholder="Password" name="password" className="input input-bordered" required />
-          <span className="relative bottom-8 left-[350px]" onClick={()=> setShowPassword(!showPassword)}>
+          <span className="relative bottom-8  left-[340px]" onClick={()=> setShowPassword(!showPassword)}>
             {
               showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
             }

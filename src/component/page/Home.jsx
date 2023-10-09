@@ -11,7 +11,7 @@ import EventCard from "../EventCard/EventCard";
 const Home = () => {
 
     const events = useLoaderData();
-    console.log( events);
+    
     return (
         <div>
             <Banner></Banner>
