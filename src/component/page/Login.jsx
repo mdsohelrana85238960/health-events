@@ -37,15 +37,14 @@ const Login = () => {
     const password = e.target.password.value;
     console.log(email,password);
 
+
+
    
-    // if (email !== "your_desired_password") {
-    //   swal("Incorrect email and password ", "Please enter the correct email", "error");
-    //   return;
-    // }
    
     // const email =form.get('email')
     // const password =form.get('password')
    singIn(email,password)
+
     .then(result =>{
         console.log(result.user);
         navigate(location.state ? location.state : '/')
@@ -53,6 +52,7 @@ const Login = () => {
     })
     .catch(error =>{
         console.error(error);
+        swal("Incorrect email and password ", "Please enter the correct email and password", "error");
     })
 }
 

@@ -28,10 +28,10 @@ const Register = () => {
           swal("Password should be at least 6 characters");
           return ;
         }
-        // else if (!/^(?=.*[A-Z])(?=.*[!@#]).{6,}$/.test(password)){
-        //   swal("Password should be at upper case and one special characters");
-        //   return ;
-        // }
+        else if (!/^(?=.*[A-Z])(?=.*[!@#]).{6,}$/.test(password)){
+          swal("Password should be at upper case and one special characters");
+          return ;
+        }
 
         // const email =form.get('email')
         // const password =form.get('password')

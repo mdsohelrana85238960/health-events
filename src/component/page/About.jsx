@@ -154,3 +154,6 @@ To start meditating, you can find guided meditation sessions online, use meditat
 };
 
 export default About;
+
+
+
